@@ -20,6 +20,18 @@ norm t = case t of
  Node l Empty -> norm (norm l) Empty
  Node Empty r -> norm Empty (norm r)
 
+--  data Tree a = Empty | Leaf a | Node (Tree a) (Tree a)
+--
+--  norm::Tree a -> Tree a
+--  norm Empty = Empty
+--  norm (Leaf x) = Leaf x
+--  norm (Node l r) = case (l,r) of
+--      (Empty,Empty) ->Empty
+--      (_,Empty) -> Empty
+--      (Empty,_) ->Empty
+--      (Leaf x,Leaf y) -> Node (Leaf x) (Leaf y)
+--      (Leaf x, Node k m) -> Node (Leaf x) (norm(Node k m))
+
 --Q4
 type Point = (Float, Float)
 type Constr = Point -> Bool
